@@ -3,7 +3,7 @@
    策略：缓存优先、后台静默更新（stale-while-revalidate）。
    改版后把 CACHE 版本号 +1，旧缓存会在 activate 时清掉。
    ============================================================ */
-const CACHE = "starisle-v5";
+const CACHE = "starisle-v6";
 
 const ASSETS = [
   "./",
@@ -62,6 +62,16 @@ self.addEventListener("activate", function (e) {
 
 self.addEventListener("fetch", function (e) {
   if (e.request.method !== "GET" || !e.request.url.startsWith(self.location.origin)) return;
+  // HTML 始终优先请求网络，确保 GitHub Pages 新版本不会被旧页面缓存遮住；离线时再回退缓存。
+  if (e.request.mode === "navigate") {
+    e.respondWith(
+      fetch(e.request).then(function (res) {
+        if (res && res.ok) caches.open(CACHE).then(function (c) { c.put(e.request, res.clone()); });
+        return res;
+      }).catch(function () { return caches.match(e.request); })
+    );
+    return;
+  }
   e.respondWith(
     caches.match(e.request).then(function (hit) {
       const fetched = fetch(e.request).then(function (res) {
