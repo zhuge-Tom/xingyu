@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 部署后把 https://your-domain.example 全局替换为你的真实域名 -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://your-domain.example/</loc><lastmod>2026-07-26</lastmod></url>
+  <url><loc>https://your-domain.example/archive.html</loc><lastmod>2026-07-26</lastmod></url>
+  <url><loc>https://your-domain.example/constellations.html</loc><lastmod>2026-07-26</lastmod></url>
+  <url><loc>https://your-domain.example/friend.html</loc><lastmod>2026-07-26</lastmod></url>
+  <url><loc>https://your-domain.example/about.html</loc><lastmod>2026-07-26</lastmod></url>
+  <url><loc>https://your-domain.example/posts/cloud-gpu.html</loc><lastmod>2025-12-30</lastmod></url>
+  <url><loc>https://your-domain.example/posts/hugo-github.html</loc><lastmod>2025-12-13</lastmod></url>
+  <url><loc>https://your-domain.example/posts/kali-pentest.html</loc><lastmod>2025-11-27</lastmod></url>
+  <url><loc>https://your-domain.example/posts/ai-learning.html</loc><lastmod>2025-11-20</lastmod></url>
+  <url><loc>https://your-domain.example/posts/starlight-train.html</loc><lastmod>2025-11-20</lastmod></url>
+</urlset>

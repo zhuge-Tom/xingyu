@@ -1,0 +1,13 @@
+{
+  "name": "星屿 · 仰望星空的博客",
+  "short_name": "星屿",
+  "description": "一个星空主题的个人博客，记录代码、生活与仰望星空的时刻。",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#050716",
+  "theme_color": "#050716",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

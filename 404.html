@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="404 · 你要找的页面迷失在星海之中。">
+  <meta name="theme-color" content="#050716">
+  <title>404 · 迷失在星海 · 星屿</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌌</text></svg>">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="sky"></canvas>
+
+  <div class="page">
+    <nav class="navbar scrolled">
+      <a class="logo" href="index.html"><span class="star-ico">✦</span>星屿</a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="index.html">首页</a></li>
+          <li><a href="index.html#posts">文章</a></li>
+          <li><a href="archive.html">归档</a></li>
+          <li><a href="constellations.html">星图</a></li>
+          <li><a href="friend.html">友链</a></li>
+          <li><a href="about.html">关于</a></li>
+        </ul>
+        <button class="search-open" aria-label="搜索文章" title="搜索（快捷键 /）">🔍</button>
+        <button class="burger" aria-label="菜单"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+
+    <main class="notfound">
+      <span class="astro" aria-hidden="true">🧑‍🚀</span>
+      <h1>404</h1>
+      <p>这个页面脱离了轨道，迷失在星海之中。<br>也许它变成了一颗流星，也许它从未存在过。</p>
+      <a class="hero-cta" href="index.html">🚀 返回星屿</a>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-stars" aria-hidden="true">✦ ✧ ✦</div>
+      <p>© 2026 星屿 · 我们都是星尘，终将归于星海</p>
+    </footer>
+  </div>
+
+  <button class="back-top" aria-label="回到顶部">↑</button>
+  <script src="js/posts-data.js"></script>
+  <script src="js/stars.js"></script>
+</body>
+</html>

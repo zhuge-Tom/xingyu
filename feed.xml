@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 部署后把 https://your-domain.example 全局替换为你的真实域名 -->
+<rss version="2.0">
+  <channel>
+    <title>星屿</title>
+    <link>https://your-domain.example/</link>
+    <description>朱歌的个人博客——记录 AI、渗透、Linux 与仰望星空的时刻。</description>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 26 Jul 2026 00:00:00 +0800</lastBuildDate>
+
+    <item>
+      <title>云算力平台(GPU)跑项目</title>
+      <link>https://your-domain.example/posts/cloud-gpu.html</link>
+      <guid>https://your-domain.example/posts/cloud-gpu.html</guid>
+      <pubDate>Tue, 30 Dec 2025 00:00:00 +0800</pubDate>
+      <description>用云算力平台(GPU)跑项目——远程连接 / SSH。AutoDL 租用、VS Code Remote-SSH 与 FileZilla 传输项目。</description>
+      <category>AI</category>
+    </item>
+    <item>
+      <title>博客 hugo 搭建和 github 常用指令</title>
+      <link>https://your-domain.example/posts/hugo-github.html</link>
+      <guid>https://your-domain.example/posts/hugo-github.html</guid>
+      <pubDate>Sat, 13 Dec 2025 00:00:00 +0800</pubDate>
+      <description>hugo 搭建博客的步骤，github 的常见指令、自动部署与 Git LFS 上传大文件。</description>
+      <category>github</category>
+    </item>
+    <item>
+      <title>kali 渗透学习经历</title>
+      <link>https://your-domain.example/posts/kali-pentest.html</link>
+      <guid>https://your-domain.example/posts/kali-pentest.html</guid>
+      <pubDate>Thu, 27 Nov 2025 00:00:00 +0800</pubDate>
+      <description>Kali Linux 信息搜集阶段的 DNS 侦察、主机枚举、端口扫描、指纹与 WAF 识别常用工具速查。</description>
+      <category>linux</category>
+    </item>
+    <item>
+      <title>AI 大模型学习经历</title>
+      <link>https://your-domain.example/posts/ai-learning.html</link>
+      <guid>https://your-domain.example/posts/ai-learning.html</guid>
+      <pubDate>Thu, 20 Nov 2025 00:00:00 +0800</pubDate>
+      <description>从神经网络、超参数、训练核心循环到卷积神经网络的深度学习入门笔记。</description>
+      <category>AI</category>
+    </item>
+    <item>
+      <title>星空列车与白的旅行</title>
+      <link>https://your-domain.example/posts/starlight-train.html</link>
+      <guid>https://your-domain.example/posts/starlight-train.html</guid>
+      <pubDate>Thu, 20 Nov 2025 00:00:00 +0800</pubDate>
+      <description>划破夜空，飞驰在星空之下。美丽的星空在眼前展开，犹如熠熠生辉的宝石箱。</description>
+      <category>cat</category>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="关于星屿博客与它的主人。">
+  <meta name="theme-color" content="#050716">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="星屿">
+  <meta property="og:title" content="关于星屿">
+  <meta property="og:description" content="关于星屿博客与它的主人。">
+  <title>关于 · 星屿</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌌</text></svg>">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="sky"></canvas>
+
+  <div class="page">
+    <nav class="navbar scrolled">
+      <a class="logo" href="index.html"><span class="star-ico">✦</span>星屿</a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="index.html">首页</a></li>
+          <li><a href="index.html#posts">文章</a></li>
+          <li><a href="archive.html">归档</a></li>
+          <li><a href="constellations.html">星图</a></li>
+          <li><a href="friend.html">友链</a></li>
+          <li><a href="about.html" class="active">关于</a></li>
+        </ul>
+        <button class="search-open" aria-label="搜索文章" title="搜索（快捷键 /）">🔍</button>
+        <button class="burger" aria-label="菜单"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+
+    <div class="prose-wrap">
+      <article class="prose-card prose fade-in visible">
+        <h1>关于星屿 🏝️</h1>
+        <p class="dim">一座漂浮在深空中的小岛，和一个喜欢仰望星空的岛主。</p>
+        <hr>
+
+        <h2>这是什么地方？</h2>
+        <p>「星屿」是朱歌的个人博客——永恒的幻想乡，少女祈祷中……在这里记录我在 AI、渗透、Linux 与折腾博客路上的学习经历，也偶尔放一些关于星空与旅途的随笔。</p>
+        <ul>
+          <li>🧠 <strong>AI</strong> —— 深度学习、大模型与云算力实践；</li>
+          <li>🐉 <strong>渗透 / Linux</strong> —— Kali 工具与安全学习笔记；</li>
+          <li>🐙 <strong>折腾</strong> —— hugo、github 与各种搭建踩坑；</li>
+          <li>🐱 <strong>随笔</strong> —— 星空、旅途与那些闪闪发光的东西。</li>
+        </ul>
+
+        <h2>关于岛主</h2>
+        <p>朱歌。向往 AI，感触最大的是茅场晶彦的 SAO，还有 vedal 的 neuro——一个是假想世界的终极幻想，另一个是现实世界的真实写照。</p>
+        <blockquote>小时候，曾有人告诉我世界是一个装满了熠熠生辉的宝石箱。但是所谓生存，就是与人争夺这些熠熠生辉的宝石。<br>——即便如此，还是希望用自己的眼睛，去见识那些闪闪发光的事物。</blockquote>
+
+        <h2>技能星座</h2>
+        <ul class="constellation-list">
+          <li>⭐ PyTorch / 深度学习</li>
+          <li>⭐ Kali / 渗透测试</li>
+          <li>⭐ Linux</li>
+          <li>⭐ hugo / github</li>
+          <li>⭐ 云算力 / SSH</li>
+          <li>⭐ 仰望星空</li>
+        </ul>
+
+        <h2>联系我</h2>
+        <p>邮箱：<code>3042511277@qq.com</code>。如果你也喜欢星空，欢迎来信。</p>
+
+        <div class="post-nav">
+          <a href="index.html">← 返回首页</a>
+        </div>
+      </article>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-stars" aria-hidden="true">✦ ✧ ✦</div>
+      <p>© 2026 星屿 · 我们都是星尘，终将归于星海</p>
+    </footer>
+  </div>
+
+  <button class="back-top" aria-label="回到顶部">↑</button>
+  <script src="js/posts-data.js"></script>
+  <script src="js/stars.js"></script>
+</body>
+</html>

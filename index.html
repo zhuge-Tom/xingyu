@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="星屿 · 一个星空主题的个人博客，记录代码、生活与仰望星空的时刻。">
+  <meta name="theme-color" content="#050716">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="星屿">
+  <meta property="og:title" content="星屿 · 仰望星空的博客">
+  <meta property="og:description" content="一个星空主题的个人博客，记录代码、生活与仰望星空的时刻。">
+  <link rel="alternate" type="application/rss+xml" title="星屿 RSS" href="feed.xml">
+  <title>星屿 · 仰望星空的博客</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌌</text></svg>">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="sky"></canvas>
+
+  <div class="page">
+    <!-- 导航 -->
+    <nav class="navbar">
+      <a class="logo" href="index.html"><span class="star-ico">✦</span>星屿</a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">首页</a></li>
+          <li><a href="index.html#posts">文章</a></li>
+          <li><a href="archive.html">归档</a></li>
+          <li><a href="constellations.html">星图</a></li>
+          <li><a href="friend.html">友链</a></li>
+          <li><a href="about.html">关于</a></li>
+        </ul>
+        <button class="search-open" aria-label="搜索文章" title="搜索（快捷键 /）">🔍</button>
+        <button class="burger" aria-label="菜单"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+
+    <!-- 英雄区 -->
+    <header class="hero">
+      <div class="moon" aria-hidden="true"></div>
+      <h1 class="hero-title">在星海之间，写下微光</h1>
+      <p class="hero-sub">这里是「星屿」——一座漂浮在深空中的小岛。<br>记录代码、生活，以及每一次仰望星空的时刻。</p>
+      <div class="hero-actions">
+        <a class="hero-cta" href="#posts">✨ 开始阅读</a>
+        <button class="hero-cta" type="button" id="wish-btn">🌠 许个愿</button>
+      </div>
+      <div class="scroll-hint" aria-hidden="true">⌄</div>
+    </header>
+
+    <!-- 航行统计 -->
+    <section class="section stats-sec" aria-label="站点统计">
+      <div class="stats-strip fade-in">
+        <div class="stat"><span class="stat-num" data-stat="posts">0</span><span class="stat-label">篇文章</span></div>
+        <div class="stat"><span class="stat-num" data-stat="tags">0</span><span class="stat-label">个标签</span></div>
+        <div class="stat"><span class="stat-num" data-stat="days">0</span><span class="stat-label">天航行</span></div>
+        <div class="stat"><span class="stat-num" data-stat="stars">0</span><span class="stat-label">颗星星此刻在头顶</span></div>
+      </div>
+    </section>
+
+    <!-- 文章列表 -->
+    <main class="section" id="posts">
+      <h2 class="section-title">🌠 最新文章</h2>
+      <p class="section-desc">星光落在纸上，便成了文字。</p>
+
+      <div class="filter-bar" aria-label="按标签筛选文章">
+        <button class="filter-btn active" data-tag="all">全部</button>
+        <button class="filter-btn" data-tag="AI">🧠 AI</button>
+        <button class="filter-btn" data-tag="linux">🐉 linux</button>
+        <button class="filter-btn" data-tag="github">🐙 github</button>
+        <button class="filter-btn" data-tag="cat">🐱 cat</button>
+      </div>
+
+      <div class="post-grid">
+        <article class="post-card fade-in" data-tag="AI">
+          <div class="post-cover" aria-hidden="true">🖥️</div>
+          <div class="post-body">
+            <div class="post-meta">
+              <span>2025-12-30</span>
+              <span class="post-tag">AI</span>
+            </div>
+            <h3><a class="post-title-link" href="posts/cloud-gpu.html">云算力平台(GPU)跑项目</a></h3>
+            <p class="post-excerpt">用云算力平台(GPU)跑项目——远程连接 / SSH。我使用的是 AutoDL 算力云，先无卡开机比直接开机便宜很多，配合 VS Code Remote-SSH 与 FileZilla 传输项目。</p>
+            <a class="read-more" href="posts/cloud-gpu.html">阅读全文</a>
+          </div>
+        </article>
+
+        <article class="post-card fade-in" data-tag="github">
+          <div class="post-cover" aria-hidden="true">🐙</div>
+          <div class="post-body">
+            <div class="post-meta">
+              <span>2025-12-13</span>
+              <span class="post-tag">github</span>
+            </div>
+            <h3><a class="post-title-link" href="posts/hugo-github.html">博客 hugo 搭建和 github 常用指令</a></h3>
+            <p class="post-excerpt">hugo 使用主题搭建博客的步骤，并介绍了 github 的常见指令和自动部署。超过 100MB 的大文件需要通过 Git LFS 上传，注意默认 1GB 的存储限制。</p>
+            <a class="read-more" href="posts/hugo-github.html">阅读全文</a>
+          </div>
+        </article>
+
+        <article class="post-card fade-in" data-tag="linux">
+          <div class="post-cover" aria-hidden="true">🐉</div>
+          <div class="post-body">
+            <div class="post-meta">
+              <span>2025-11-27</span>
+              <span class="post-tag">linux</span>
+            </div>
+            <h3><a class="post-title-link" href="posts/kali-pentest.html">kali 渗透学习经历</a></h3>
+            <p class="post-excerpt">Kali Linux 是一个基于 Debian、专为网络安全和渗透测试设计的发行版。本文记录信息搜集阶段的 DNS 侦察、主机枚举、端口扫描、指纹与 WAF 识别常用工具。</p>
+            <a class="read-more" href="posts/kali-pentest.html">阅读全文</a>
+          </div>
+        </article>
+
+        <article class="post-card fade-in" data-tag="AI">
+          <div class="post-cover" aria-hidden="true">🧠</div>
+          <div class="post-body">
+            <div class="post-meta">
+              <span>2025-11-20</span>
+              <span class="post-tag">AI</span>
+            </div>
+            <h3><a class="post-title-link" href="posts/ai-learning.html">AI 大模型学习经历</a></h3>
+            <p class="post-excerpt">致力于为全人类带来欢笑的 AI 主播 Neuro-sama，是多种专家模型集成的产物。从神经网络、超参数、训练核心循环到卷积神经网络的深度学习入门笔记。</p>
+            <a class="read-more" href="posts/ai-learning.html">阅读全文</a>
+          </div>
+        </article>
+
+        <article class="post-card fade-in" data-tag="cat">
+          <div class="post-cover" aria-hidden="true">🚂</div>
+          <div class="post-body">
+            <div class="post-meta">
+              <span>2025-11-20</span>
+              <span class="post-tag">cat</span>
+            </div>
+            <h3><a class="post-title-link" href="posts/starlight-train.html">星空列车与白的旅行</a></h3>
+            <p class="post-excerpt">黑猫会将迷途之人带向更好的路上去。划破夜空，飞驰在星空之下，美丽的星空在眼前展开，璀璨夺目，犹如熠熠生辉的宝石箱。</p>
+            <a class="read-more" href="posts/starlight-train.html">阅读全文</a>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <!-- 星语 -->
+    <section class="section quote-sec">
+      <blockquote class="starlight-quote fade-in">
+        <p id="quote-text">我们都是星尘。宇宙在我们体内，我们是宇宙认识自己的一种方式。</p>
+        <cite id="quote-from">—— 卡尔·萨根</cite>
+      </blockquote>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+      <div class="footer-stars" aria-hidden="true">✦ ✧ ✦</div>
+      <p>© 2026 星屿 · 我们都是星尘，终将归于星海</p>
+    </footer>
+  </div>
+
+  <button class="back-top" aria-label="回到顶部">↑</button>
+  <script src="js/posts-data.js"></script>
+  <script src="js/stars.js"></script>
+</body>
+</html>

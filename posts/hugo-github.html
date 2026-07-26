@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="hugo 使用主题搭建博客的步骤，以及 github 常见指令、自动部署与 Git LFS 上传大文件。">
+  <meta name="theme-color" content="#050716">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="星屿">
+  <meta property="og:title" content="博客 hugo 搭建和 github 常用指令">
+  <meta property="og:description" content="hugo 搭建博客的步骤，github 常见指令、自动部署与 Git LFS 上传大文件。">
+  <title>博客 hugo 搭建和 github 常用指令 · 星屿</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌌</text></svg>">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <canvas id="sky"></canvas>
+
+  <div class="page">
+    <nav class="navbar scrolled">
+      <a class="logo" href="../index.html"><span class="star-ico">✦</span>星屿</a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="../index.html">首页</a></li>
+          <li><a href="../index.html#posts" class="active">文章</a></li>
+          <li><a href="../archive.html">归档</a></li>
+          <li><a href="../constellations.html">星图</a></li>
+          <li><a href="../friend.html">友链</a></li>
+          <li><a href="../about.html">关于</a></li>
+        </ul>
+        <button class="search-open" aria-label="搜索文章" title="搜索（快捷键 /）">🔍</button>
+        <button class="burger" aria-label="菜单"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+
+    <div class="prose-wrap">
+      <article class="prose-card prose fade-in visible">
+        <h1>博客 hugo 搭建和 github 常用指令</h1>
+        <div class="post-meta">
+          <span>2025-12-13</span>
+          <span class="post-tag">github</span>
+        </div>
+
+        <p class="dim">hugo 使用主题搭建博客的步骤，并且介绍了 github 的常见指令和自动部署。超过 100MB 的大文件需要通过 Git LFS 上传，但要注意存储限制：Git LFS 默认 1GB。如果超出限制，可以升级 GitHub 的计费计划，或考虑其他存储服务。</p>
+        <hr>
+
+        <h2>博客本地部署</h2>
+
+        <h3>使用 hugo 部署</h3>
+        <pre><code>hugo --theme=hugo-theme-reimu --baseURL="github仓库名"
+hugo server -D</code></pre>
+        <p>访问 <code>http://localhost:1313/</code>。</p>
+
+        <h3>上传 github 远程仓库</h3>
+        <pre><code>cd ..
+hugo --theme=hugo-theme-reimu --baseURL="github仓库名"
+cd public
+git add .
+git commit -m "***"   # 填修改注释信息
+git push origin main</code></pre>
+
+        <h3>查看未来日期的文章</h3>
+        <pre><code>hugo server -DF</code></pre>
+
+        <h3>清理并重新构建</h3>
+        <pre><code>hugo --cleanDestinationDir</code></pre>
+
+        <h3>启动开发服务器</h3>
+        <pre><code>hugo server -D</code></pre>
+
+        <h2>关于 GitHub</h2>
+
+        <h3>github 自动部署</h3>
+        <pre><code>git add .
+git commit -m "***"
+git push</code></pre>
+
+        <h3>测试网络连通性</h3>
+        <pre><code>ping github.com</code></pre>
+
+        <h3>git fetch</h3>
+        <p><code>git fetch</code> 是一个从远端仓库拉取最新变更信息的命令。获取的信息并不直接反映在本地分支。</p>
+
+        <h3>git pull</h3>
+        <p>使用 <code>git pull</code> 命令则会将所有的变更都反映到本地分支上，包括不正确的或者有问题的变更，统统搞到本地分支上。<code>git pull</code> 是一个比 <code>git fetch</code> 执行更多流程的命令，它可以同时执行 <code>git fetch</code> 和 <code>git merge</code> 或 <code>git rebase</code>。因此，当你特别希望远端变更能及时反映到本地分支上的时候，就用 <code>git pull</code> 吧。</p>
+
+        <h3>git merge</h3>
+        <p><code>git merge</code> 是 Git 中最常用的分支合并命令。当你使用 merge 命令时，Git 会创建一个新的提交（merge commit），保留了两个分支的所有历史记录。</p>
+
+        <h3>git rebase</h3>
+        <p><code>git rebase</code> 的英文直译是「变基」，它可以将一个分支的提交「移植」到另一个分支上，使得提交历史呈现为一条直线，更加清晰整洁。Rebase 会将当前分支的提交「复制」到目标分支的最新提交之后，然后放弃原来的提交。这样看起来就像是直接从目标分支的最新提交开始开发的，相当于将需要合并的分支上的提交「重放」到了合并的目标分支上。</p>
+
+        <h2>Git LFS 上传大文件</h2>
+
+        <h3>初始化上传仓库步骤</h3>
+        <pre><code>git init                       # 创建本地仓库环境
+git lfs install                # 安装大文件上传应用
+git lfs track *                # 追踪要上传的大文件，*表示路径下的所有文件
+git add .gitattributes         # 添加先上传的属性文件（要先上传属性文件，不然有可能失败）
+git commit -m "pre"            # 添加属性文件上传的说明
+git remote add origin https://github.com/Youpeng-Zhang/MOP.git   # 建立本地和 GitHub 仓库的链接
+git push origin master         # 上传属性文件
+git add *                      # 添加要上传的大文件
+git commit -m "Git LFS commit" # 添加大文件上传的说明
+git push origin master         # 上传大文件</code></pre>
+        <blockquote>GitHub 对单个文件的大小限制是 100MB。如果你想上传超过 100MB 的文件，需要使用一些技巧：将大文件分割、使用 Git LFS（Large File Storage），或者借助其他文件存储工具。</blockquote>
+
+        <h3>用 TortoiseGit 和 Git LFS 上传大文件</h3>
+        <p>Git LFS 是一个 Git 的扩展，用于管理大文件。首先，需要安装并配置它。</p>
+
+        <h4>安装 Git LFS</h4>
+        <p>访问 Git LFS 官方下载页面或使用包管理器安装。安装完成后，在命令行运行以下命令启用：</p>
+        <pre><code>git lfs install</code></pre>
+        <p>确认 git-lfs 已正确安装：</p>
+        <pre><code>git lfs version</code></pre>
+
+        <h4>初始化 Git LFS 对大文件的支持</h4>
+        <p>指定需要使用 LFS 管理的文件类型，在存储库根目录运行：</p>
+        <pre><code>git lfs track "*.文件扩展名"</code></pre>
+        <p>例如，如果你想上传一个 <code>.zip</code> 文件：</p>
+        <pre><code>git lfs track "*.zip"</code></pre>
+        <p>运行上述命令后，会在存储库根目录生成一个 <code>.gitattributes</code> 文件，其中记录了被 LFS 跟踪的文件类型。确保这个文件被提交到你的存储库。</p>
+
+        <h4>上传大文件</h4>
+        <p>将大文件复制到存储库目录中，右键文件夹选择 TortoiseGit → Git Commit，确保大文件已正确添加到提交列表。提交时，大文件会由 Git LFS 自动处理。</p>
+        <p>如果没有显示 TortoiseGit 选项，可以使用 Git Bash：在当前文件夹空白处右键，选择 <strong>Open Git Bash here</strong>，然后依次执行：</p>
+        <pre><code># 添加所有更改的文件（包括大文件）
+git add .
+# 或者只添加特定文件：git add 迁移学习实战.zip .gitattributes
+
+# 提交更改
+git commit -m "添加大文件，使用 LFS 管理"
+
+# 推送到远程仓库
+git push origin master
+# 如果您的分支不叫 master，请替换为您的分支名，如 main</code></pre>
+
+        <h4>注意事项</h4>
+        <ul>
+          <li><strong>GitHub 必须支持 Git LFS</strong>——确保你已在 GitHub 存储库启用了 Git LFS 功能。如果尚未启用，第一次推送 LFS 文件时，GitHub 会自动提示你。</li>
+          <li><strong>存储限制</strong>——Git LFS 默认提供 1GB 的存储和 1GB 的带宽。如果超出限制，可以升级 GitHub 的计费计划，或考虑其他存储服务。</li>
+        </ul>
+
+        <div class="post-nav">
+          <a href="cloud-gpu.html">← 上一篇：云算力平台(GPU)跑项目</a>
+          <a href="kali-pentest.html">下一篇：kali 渗透学习经历 →</a>
+        </div>
+      </article>
+      <div id="comments-mount"></div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-stars" aria-hidden="true">✦ ✧ ✦</div>
+      <p>© 2025-2026 星屿 · 朱歌 · 我们都是星尘，终将归于星海</p>
+    </footer>
+  </div>
+
+  <button class="back-top" aria-label="回到顶部">↑</button>
+  <script src="../js/posts-data.js"></script>
+  <script src="../js/stars.js"></script>
+</body>
+</html>
