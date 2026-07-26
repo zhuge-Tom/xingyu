@@ -3,7 +3,7 @@
    策略：缓存优先、后台静默更新（stale-while-revalidate）。
    改版后把 CACHE 版本号 +1，旧缓存会在 activate 时清掉。
    ============================================================ */
-const CACHE = "starisle-v3";
+const CACHE = "starisle-v4";
 
 const ASSETS = [
   "./",
@@ -34,6 +34,11 @@ const ASSETS = [
   "./images/posts/f.png",
   "./images/posts/PyTorch2.jpg",
   "./images/posts/chenxi.webp",
+  "./images/covers/cloud-gpu.webp",
+  "./images/covers/hugo-github.webp",
+  "./images/covers/kali-pentest.avif",
+  "./images/covers/ai-learning.avif",
+  "./images/covers/starlight-train.jpg",
 ];
 
 self.addEventListener("install", function (e) {
