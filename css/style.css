@@ -748,7 +748,9 @@ button.hero-cta {
   border-radius: 50%;
   border: 1px solid var(--card-border);
   background: rgba(20, 26, 58, 0.4);
+  color: var(--gold);
   font-size: 0.9rem;
+  text-shadow: 0 0 10px rgba(255, 212, 121, 0.65);
   cursor: pointer;
   transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
 }

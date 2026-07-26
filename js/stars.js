@@ -552,7 +552,7 @@
       date.textContent = p.date;
       const title = document.createElement("span");
       title.className = "a-title";
-      title.textContent = p.emoji + " " + p.title;
+      title.textContent = p.title;
       const tag = document.createElement("span");
       tag.className = "post-tag";
       tag.textContent = p.tag;
@@ -744,7 +744,7 @@
       '<form class="comment-form">' +
       '<input class="c-name" type="text" maxlength="20" placeholder="署名（可选，默认「旅行者」）">' +
       '<textarea class="c-text" required maxlength="500" placeholder="写点什么，向这颗星球广播…"></textarea>' +
-      '<button type="submit" class="comment-send">发射信号 🚀</button>' +
+      '<button type="submit" class="comment-send">发射信号</button>' +
       "</form>" +
       '<ul class="comment-list"></ul>';
     commentsMount.appendChild(sec);
