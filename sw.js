@@ -3,7 +3,7 @@
    策略：缓存优先、后台静默更新（stale-while-revalidate）。
    改版后把 CACHE 版本号 +1，旧缓存会在 activate 时清掉。
    ============================================================ */
-const CACHE = "starisle-v4";
+const CACHE = "starisle-v5";
 
 const ASSETS = [
   "./",
@@ -15,6 +15,8 @@ const ASSETS = [
   "./404.html",
   "./css/style.css",
   "./js/stars.js",
+  "./js/music-config.js",
+  "./js/music-player.js",
   "./js/posts-data.js",
   "./js/constellations.js",
   "./posts/cloud-gpu.html",
