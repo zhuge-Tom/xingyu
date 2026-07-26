@@ -893,7 +893,7 @@
           d.textContent = p.date;
           const t = document.createElement("span");
           t.className = "a-title";
-          t.textContent = p.emoji + " " + p.title;
+          t.textContent = p.title;
           const g = document.createElement("span");
           g.className = "post-tag";
           g.textContent = p.tag;
