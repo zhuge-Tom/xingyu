@@ -795,14 +795,17 @@ button.hero-cta {
   margin-top: 0.9rem;
   max-height: 52vh;
   overflow-y: auto;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 .search-results a {
-  display: flex;
-  align-items: baseline;
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr) auto;
+  align-items: center;
   gap: 0.9rem;
+  min-height: 66px;
   padding: 0.7rem 1.1rem;
   border-radius: 12px;
   border: 1px solid var(--card-border);
@@ -820,7 +823,7 @@ button.hero-cta {
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
-.search-results .a-title { flex: 1; }
+.search-results .a-title { min-width: 0; }
 .search-empty { color: var(--text-dim); text-align: center; padding: 1rem; }
 .search-hint {
   margin-top: 0.7rem;
